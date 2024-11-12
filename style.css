@@ -1,32 +1,55 @@
+/* Refactored: Increased opacity from 0.5 to 1 to make the image fully opaque */
 img {
-  opacity: 1;
+  opacity: 1; /* Refactored */
+  max-width: 100%; /* New: Makes images responsive */
+  height: auto; /* New: Ensures aspect ratio is maintained */
+  filter: brightness(1.2); /* Optional: Increased brightness */
+  transition: transform 0.3s ease, filter 0.3s ease; /* New: Smooth hover effects */
 }
 
+img:hover {
+  transform: scale(1.05); /* New: Slight zoom effect on hover */
+  filter: brightness(1.5); /* New: Brighten on hover */
+}
 
-#about{
-  padding-top:40px;
-  padding-bottom:100px;
-  background-color:lightblue;
+#about {
+  padding: 40px 20px 100px; /* Refactored: Combined padding */
+  background-color: lightblue;
+  text-align: center; /* New: Centered content for a modern look */
+}
+
+#portfolio {
+  padding: 40px 20px; /* Refactored: Adjusted padding */
+  background-color: #f9f9f9; /* New: Subtle background color */
+}
+
+#contact {
+  padding: 20px; /* Refactored: Increased padding */
+  text-align: left;
+  background-color: lavender;
+  display: flex; /* New: Flexbox for responsiveness */
+  flex-direction: column; /* New: Stacks elements on top of each other */
+  align-items: flex-start; /* New: Aligns content to the left */
+}
+
+#contact-info {
+  padding: 10px;
+}
+
+footer {
+  background-color: #f2f2f2;
+  padding: 25px;
+  text-align: center; /* New: Centered footer content */
+  font-size: 14px; /* New: Adjusted font size for a cleaner look */
+}
+
+/* New: Media query for mobile responsiveness */
+@media (max-width: 768px) {
+  #about, #portfolio, #contact, footer {
+    padding: 20px 10px; /* New: Adjusted padding for smaller screens */
+  }
   
+  img {
+    transform: none; /* New: Disable zoom on smaller screens for usability */
+  }
 }
-
-#portfolio{
-  padding-top: 40px;
-  
-}
-
-#contact{
-  padding-top: 10px;
-  text-align:left;
-  background-color:lavender;
-}
-
-#contact-info{
-  padding:10px;
-  
-}
-
- footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
